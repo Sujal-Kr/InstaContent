@@ -3,7 +3,7 @@ import { Search } from 'lucide-react'
 const SearchCard = ({onSearchInput}:any) => {
    
     return (
-        <div className='p-10 bg-gradient-to-br from-purple-500 via-purple-700 to-blue-600
+        <div className='p-10 bg-gradient-to-r from-blue-600 to-purple-400
     flex flex-col justify-center items-center text-white'>
             {/* search section */}
             <h2 className='text-3xl font bold'>Browse All favourites</h2>
