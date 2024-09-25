@@ -6,9 +6,15 @@ import { usePathname, useRouter } from 'next/navigation'
 import UsageTracker from './UsageTracker'
 import Link from 'next/link'
 
-const Sidebar = () => {
+const Sidebar = ({toggleSidebar}:{
+    toggleSidebar:(val:boolean)=>void
+}) => {
     const path = usePathname()
     const router = useRouter()
+    const handleRouter=(path:string)=>{
+        toggleSidebar(false)
+        router.push(path)
+    }
     const MenuList = [
         {
             name: "Home",
@@ -48,7 +54,7 @@ const Sidebar = () => {
                             <div key={index} className={`flex gap-3 mb-2 p-3
                         hover:bg-primary hover:text-white rounded-lg
                         ${path == menu.path && 'bg-primary text-white'}`}
-                                onClick={() => router.push(menu.path)}>
+                                onClick={() => handleRouter(menu.path)}>
                                 <menu.icon className='h-6 w-6' />
                                 <h2 className='text-lg'>{menu.name}</h2>
                             </div>

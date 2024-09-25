@@ -20,7 +20,7 @@ const TemplateList = ({ userSearchInput }: {
         }
     }, [userSearchInput])
     return (
-        <div className='grid grid-cols-1 p-4 md:p-10  md:grid-cols-3 lg:grid-cols-4 gap-5 auto-rows-fr'>
+        <div className='grid grid-cols-1 py-4  md:grid-cols-3 lg:grid-cols-4 gap-5 auto-rows-fr'>
             {
                 templateList.map((template: Template, index: number) => (
                     <div key={index} className='flex hover:scale-105 transition-all'>
