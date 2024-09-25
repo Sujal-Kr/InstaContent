@@ -80,7 +80,7 @@ const CreateContent: React.FC<CreateContentProps> = ({ params }) => {
   }
 
   return (
-    <div className='p-5'>
+    <div className='p-2 sm:p-5'>
       <Link href='/dashboard'>
         <Button className='flex gap-2'><ArrowLeft size={16} />Back</Button>
       </Link>
@@ -91,7 +91,7 @@ const CreateContent: React.FC<CreateContentProps> = ({ params }) => {
           userFormInput={(value: object | undefined) => generateAiContent(value)}
           loading={loading} />
         {/* output section */}
-        <div className='col-span-2'>
+        <div className='col-span-1 md:col-span-2'>
           <OutputSection aiOutput={aiOutput} />
         </div>
       </div>

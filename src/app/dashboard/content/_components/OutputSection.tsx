@@ -29,9 +29,9 @@ const OutputSection = ({ aiOutput }: { aiOutput: string | undefined }) => {
 
   return (
     <div className='shadow-lg border bg-white p-1 rounded-lg'>
-      <div className='flex items-center justify-between p-5'>
-        <h2>Your Result</h2>
-        <Button className='text-xs flex gap-2' onClick={handleCopy}>
+      <div className='flex items-center justify-between p-2 sm:p-5'>
+        <h2 className='text-xs'>Your Result</h2>
+        <Button className='text-xs flex gap-2 ' onClick={handleCopy}>
           <Copy className='h-4 w-4' />
           Copy
         </Button>

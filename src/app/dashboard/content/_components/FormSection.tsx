@@ -39,7 +39,7 @@ const FormSection = ({ currentTemplate, userFormInput, loading }: {
               <label className='font-bold '>{item.label}</label>
               {
                 item.field === "input" ? <Input name={item.name} required={item.required} onChange={handleChange} /> :
-                  item.field === "textarea" ? <Textarea name={item.name} required={item.required} onChange={handleChange} /> : null
+                  item.field === "textarea" ? <Textarea name={item.name} className='h-32' required={item.required} onChange={handleChange} /> : null
               }
             </div>
           ))

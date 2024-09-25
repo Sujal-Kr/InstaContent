@@ -1,27 +1,29 @@
+
 import { Button } from '@/components/ui/button'
 import { CreditContext } from '@/context/credit'
 import { SubscriptionContext } from '@/context/subsrciption'
 import { UsageContext } from '@/context/usage'
 import { History } from '@/types/history.types'
 import { db } from '@/utils/db'
-import { AiOutput, subscription} from '@/utils/schema'
+import { AiOutput, subscription } from '@/utils/schema'
 import { useClerk } from '@clerk/nextjs'
 import { eq } from 'drizzle-orm'
+import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 
 const UsageTracker = () => {
     const { user } = useClerk()
-    const {totalUsage, setTotalUsage} = useContext(UsageContext) 
-    const [maxValue,setMaxValue] = useState<Number>(10000)
-    const {setPremiumUser}=useContext(SubscriptionContext)
-    const {credit} =useContext(CreditContext)
+    const { totalUsage, setTotalUsage } = useContext(UsageContext)
+    const [maxValue, setMaxValue] = useState<Number>(10000)
+    const { setPremiumUser } = useContext(SubscriptionContext)
+    const { credit } = useContext(CreditContext)
 
     const loadData = async () => {
         const result: History[] = await db.select().from(AiOutput).where(
             eq(AiOutput.createdBy, user?.primaryEmailAddress?.emailAddress!)
         )
         const total = getUsage(result)
-        setTotalUsage(total) 
+        setTotalUsage(total)
         console.log(total)
     }
 
@@ -40,20 +42,20 @@ const UsageTracker = () => {
             eq(subscription.email, user?.primaryEmailAddress?.emailAddress!)
         )
         console.log(result)
-        if(result[0]?.status){
+        if (result[0]?.status) {
             setMaxValue(1000000)
             setPremiumUser(true)
-        } 
+        }
     }
     useEffect(() => {
         if (user) {
             loadData()
             checkPremiumUsers()
         }
-    }, [user]) 
+    }, [user])
     useEffect(() => {
         loadData()
-    },[credit,user])
+    }, [credit, user])
     return (
         <div className=''>
             <div className='bg-primary text-white p-3 rounded-md'>
@@ -66,7 +68,7 @@ const UsageTracker = () => {
                 </div>
                 <h2 className='my-2 text-sm'>{totalUsage}/{maxValue} Credits used</h2>
             </div>
-            <Button variant={'secondary'} className='text-primary w-full my-3'>Upgrade</Button>
+            <Link href="/dashboard/billing"><Button variant={'secondary'} className='text-primary w-full my-3'>Upgrade</Button></Link>
         </div>
     )
 }

@@ -6,10 +6,10 @@ const SearchCard = ({onSearchInput}:any) => {
         <div className='p-10 bg-gradient-to-r from-blue-600 to-purple-400
     flex flex-col justify-center items-center text-white'>
             {/* search section */}
-            <h2 className='text-3xl font bold'>Browse All favourites</h2>
-            <p> What would you like to create today?</p>
+            <h2 className='text-3xl font bold text-center'>Browse All favourites</h2>
+            <p className='text-center'> What would you like to create today?</p>
             <div className='w-full flex justify-center'>
-                <div className='flex gap-2 bg-white rounded-md p-2 border my-5 w-[50%]'>
+                <div className='flex gap-2 bg-white rounded-md p-2 border my-5 w-full max-w-md'>
                     <Search className='text-primary' />
                     <input
                         type='text'
