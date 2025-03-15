@@ -26,10 +26,9 @@ InstaContent is an AI-powered platform designed to help users generate various t
 - **Billing**: `/dashboard/billing`
 - **Content Creation**: `/dashboard/content/[slug]`
 - **History**: `/dashboard/history`
-- **Settings**: `/dashboard/setting`
+- **Manage Account**
 
-### API
-- **Payment**: `/api/payment`
+
 
 
 ## Installation
@@ -77,12 +76,10 @@ InstaContent is an AI-powered platform designed to help users generate various t
 - **Billing**: Upgrade your plan at `/dashboard/billing` to access premium features.
 - **Content Creation**: Generate content by selecting a template from the dashboard and filling out the required fields.
 - **History**: View your previously generated content at `/dashboard/history`.
-- **Settings**: Manage your profile settings at `/dashboard/setting`.
+- **Manage Account**: Manage your profile settings by clicking on your profile picture and manage accounts `/dashboard/setting`.
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
 
-This project is licensed under the MIT License.
