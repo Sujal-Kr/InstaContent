@@ -347,6 +347,29 @@ export default  [
            
         ]
     },
+    {
+        "name": "Paragraph Translator",
+        "desc": "An AI-powered tool that translates a given paragraph into the specified language.",
+        "icon": "https://cdn-icons-png.flaticon.com/128/4283/4283689.png",
+        "category": "Translation",
+        "slug": "paragraph-translator",
+        "aiPrompt": "Translate the given paragraph into the specified language and return the output .",
+        "form": [
+            {
+                "label": "Enter your paragraph",
+                "field": "textarea",
+                "name": "paragraph",
+                "required": true
+            },
+            {
+                "label": "Enter target language",
+                "field": "input",
+                "name": "language",
+                "required": true
+            }
+        ]
+    }
+    
 
 
 

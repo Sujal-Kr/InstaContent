@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InstaContent
 
-## Getting Started
+InstaContent is an AI-powered platform designed to help users generate various types of content instantly. Whether you need blog posts, Instagram captions, code snippets, or more, InstaContent leverages advanced AI models to provide high-quality content tailored to your needs.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Blog Content Generation**: Generate engaging blog posts, titles, and topic ideas.
+- **YouTube Tools**: Create SEO-optimized titles, descriptions, and tags for your YouTube videos.
+- **Instagram Tools**: Generate Instagram posts, hashtags, and trending post ideas.
+- **Rewriting Tools**: Rewrite articles to make them plagiarism-free and improve text quality.
+- **Coding Tools**: Generate code snippets, explain code, and detect bugs in code.
+- **Marketing Tools**: Generate catchy taglines and product descriptions.
+- **Translation Tools**: Translate paragraphs into specified languages.
+- **User Management**: Sign up, sign in, and manage user profiles with Clerk integration.
+- **Subscription Management**: Upgrade to premium plans for extended features and usage limits.
+- **Usage Tracking**: Track your usage and credits for AI-generated content.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Authentication
+- **Sign In**: `/sign-in`
+- **Sign Up**: `/sign-up`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Dashboard
+- **Home**: `/dashboard`
+- **Billing**: `/dashboard/billing`
+- **Content Creation**: `/dashboard/content/[slug]`
+- **History**: `/dashboard/history`
+- **Settings**: `/dashboard/setting`
 
-## Learn More
+### API
+- **Payment**: `/api/payment`
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/yourusername/instacontent.git
+    cd instacontent
+    ```
 
-## Deploy on Vercel
+2. **Install dependencies**:
+    ```sh
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Set up environment variables**:
+    Create a `.env.local` file in the root directory and add the necessary environment variables:
+    ```env
+    NEXT_PUBLIC_RAZORPAY_ID=your_razorpay_id
+    NEXT_PUBLIC_RAZORPAY_SECRET=your_razorpay_secret
+    NEXT_PUBLIC_PLAN_ID=your_plan_id
+    NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
+    NEXT_PUBLIC_DRIZZLE_DB_URL=your_drizzle_db_url
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Run the development server**:
+    ```sh
+    npm run dev
+    ```
+
+5. **Build the project**:
+    ```sh
+    npm run build
+    ```
+
+6. **Start the production server**:
+    ```sh
+    npm start
+    ```
+
+## Usage
+
+- **Sign In/Sign Up**: Navigate to `/sign-in` or `/sign-up` to create an account or log in.
+- **Dashboard**: Access the dashboard at `/dashboard` to explore and use various content generation tools.
+- **Billing**: Upgrade your plan at `/dashboard/billing` to access premium features.
+- **Content Creation**: Generate content by selecting a template from the dashboard and filling out the required fields.
+- **History**: View your previously generated content at `/dashboard/history`.
+- **Settings**: Manage your profile settings at `/dashboard/setting`.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
