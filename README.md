@@ -35,7 +35,7 @@ InstaContent is an AI-powered platform designed to help users generate various t
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/yourusername/instacontent.git
+    https://github.com/Sujal-Kr/InstaContent.git
     cd instacontent
     ```
 
